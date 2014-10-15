@@ -39,17 +39,17 @@ public class Mountain extends Fractal {
         } else {
             Point ab = getMidPoint(a, b);
             Point bc = getMidPoint(b, c);
-            Point ac = getMidPoint(c, a);
+            Point ac = getMidPoint(a, c);
             drawTriangle(g, a, ab, ac, order - 1);
             drawTriangle(g, ab, b, bc, order - 1);
             drawTriangle(g, ac, bc, c, order - 1);
-            drawTriangle(g, ab, bc, ac, order - 1);
+            drawTriangle(g, ab, ac, bc, order - 1);
         }
     }
 
     private Point getMidPoint(Point a, Point b) {
-        for(Side s : sides){
-            if(s.equals(b, a)){
+        for (Side s : sides) {
+            if (s.equals(a, b)) {
                 Point midPoint = s.getMidPoint();
                 sides.remove(s);
                 return midPoint;
