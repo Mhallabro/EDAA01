@@ -6,22 +6,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class OrderDownButton extends JButton implements ActionListener {
-    private FractalView view;
+	private FractalView view;
 
-    public OrderDownButton(FractalView view) {
-        super("<");
-        this.view = view;
-        addActionListener(this);
-        this.setToolTipText("Minskar fraktalens ordning.");
-    }
+	public OrderDownButton(FractalView view) {
+		super("<");
+		this.view = view;
+		addActionListener(this);
+		this.setToolTipText("Minskar fraktalens ordning.");
+	}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Fractal fractal = view.getFractal();
-        if (fractal.getOrder() > 0) {
-            fractal.setOrder(fractal.order - 1);
-            view.updateDrawing();
-        }
-    }
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		Fractal fractal = view.getFractal();
+		if (fractal.getOrder() > 0) {
+			fractal.setOrder(fractal.getOrder() - 1);
+			view.updateDrawing();
+		}
+	}
 
 }
