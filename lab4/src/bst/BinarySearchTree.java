@@ -17,23 +17,48 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
 	 * @return true if the the element was inserted
 	 */
 	public boolean add(E x) {
-		return false;
+		return add(x, root);
 	}
+
+    private boolean add(E x, BinaryNode<E> node){
+        if(node.element == x){
+            return false;
+        }else {
+            if(node == null){
+                return false;
+            }else {
+                add(x)
+            }
+        }
+
+
+    }
 	
 	/**
 	 * Computes the height of tree.
 	 * @return the height of the tree
 	 */
 	public int height() {
-		return 0;
+        if(root == null){
+            return 0;
+        }
+        return height(root);
 	}
-	
-	/**
+
+    private int height(BinaryNode<E> node) {
+        if(node == null){
+            return 0;
+        }else {
+            return 1 + Math.max(height(node.left), height(node.right));
+        }
+    }
+
+    /**
 	 * Returns the number of elements in this tree.
 	 * @return the number of elements in this tree
 	 */
 	public int size() {
-		return 0;
+		return size;
 	}
 	
 	/**
