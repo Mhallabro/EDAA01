@@ -29,6 +29,11 @@ public class BSTVisualizer {
     public static void main(String[] args) {
         BSTVisualizer bst = new BSTVisualizer("Binary Tree", 500, 500);
         BinarySearchTree<Integer> tree = new BinarySearchTree<Integer>();
+        tree.add(4);
+		tree.add(3);
+		tree.add(2);
+		tree.add(1);
+		tree.rebuild();
         bst.drawTree(tree);
     }
 
