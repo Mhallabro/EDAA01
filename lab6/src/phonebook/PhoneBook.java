@@ -1,5 +1,9 @@
 package phonebook;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class PhoneBook {
 	private Map<String,LinkedList<String>> phoneBook;
@@ -21,7 +25,17 @@ public class PhoneBook {
 	 * @return true if the specified name and number was inserted
 	 */
 	public boolean put(String name, String number) {
-		return false;
+		if (!phoneBook.containsKey(name)) {
+			phoneBook.put(name, new LinkedList<String>());
+			phoneBook.get(name).add(number);
+			return true;
+		}
+		LinkedList<String> numbers = phoneBook.get(name);
+		if (numbers.contains(number)) {
+			return false;
+		}
+		numbers.add(number);
+		return true;
 	}
 	
 	
