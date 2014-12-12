@@ -71,12 +71,10 @@ public class PhoneBook implements Serializable {
 	 */
 	public List<String> findNames(String number) {
 		List<String> names = new ArrayList<String>();
-		if (phoneBook.containsValue(number)) {
 			Set<String> allNames = names();
 			for (String name : allNames) {
 				if (phoneBook.get(name).contains(number)) names.add(name);
 			}
-		}
 		return names;
 	}
 	
