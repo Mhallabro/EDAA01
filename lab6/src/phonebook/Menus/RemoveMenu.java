@@ -19,6 +19,11 @@ public class RemoveMenu extends JMenuItem implements ActionListener {
 	}
 	
 	 public void actionPerformed(ActionEvent e) {
-		
+		 String name = JOptionPane.showInputDialog("Enter name");
+		 if (name != null) {
+			 phoneBook.remove(name);
+		 } else {
+			 JOptionPane.showMessageDialog(gui, "Name cannot be null!");
+		 }
 	 }
 }
