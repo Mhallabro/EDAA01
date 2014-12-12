@@ -3,7 +3,7 @@ package phonebook;
 import java.util.*;
 
 public class PhoneBook {
-	private Map<String,LinkedList<String>> phoneBook;
+	private Map<String, LinkedList<String>> phoneBook = new HashMap<String, LinkedList<String>>();
 	
 	public PhoneBook() {
 		
@@ -69,7 +69,7 @@ public class PhoneBook {
 	 * @return The list of names associated with the specified number
 	 */
 	public List<String> findNames(String number) {
-		List<String> names = new ArrayList<>();
+		List<String> names = new ArrayList<String>();
 		if (phoneBook.containsValue(number)) {
 			Set<String> allNames = names();
 			for (String name : allNames) {
