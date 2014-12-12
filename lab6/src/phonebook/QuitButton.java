@@ -27,6 +27,6 @@ public class QuitButton extends JButton implements ActionListener {
 			ex.printStackTrace();
 			System.exit(1);
 		}
-
+		System.exit(1);
 	}
 }
