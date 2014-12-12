@@ -1,9 +1,6 @@
 package phonebook;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PhoneBook {
 	private Map<String,LinkedList<String>> phoneBook;
@@ -48,7 +45,8 @@ public class PhoneBook {
 	 * @return true if the specified name was present
 	 */
 	public boolean remove(String name) {
-		return false;
+		if (phoneBook.remove(name) == null) return false;
+		return true;
 	}
 	
 	/**
@@ -59,7 +57,7 @@ public class PhoneBook {
 	 * @return The phone numbers associated with the specified name
 	 */
 	public List<String> findNumber(String name) {
-		return null;
+		return phoneBook.get(name);
 	}
 	
 	/**
@@ -71,7 +69,14 @@ public class PhoneBook {
 	 * @return The list of names associated with the specified number
 	 */
 	public List<String> findNames(String number) {
-		return null;
+		List<String> names = new ArrayList<>();
+		if (phoneBook.containsValue(number)) {
+			Set<String> allNames = names();
+			for (String name : allNames) {
+				if (phoneBook.get(name).contains(number)) names.add(name);
+			}
+		}
+		return names;
 	}
 	
 	/**
@@ -80,7 +85,7 @@ public class PhoneBook {
 	 * @return The set of all names present in this phone book
 	 */
 	public Set<String> names() {
-		return null;
+		return phoneBook.keySet();
 	}
 	
 	/**
@@ -88,7 +93,7 @@ public class PhoneBook {
 	 * @return true if this phone book is empty
 	 */	
 	public boolean isEmpty() {
-		return true;
+		return phoneBook.isEmpty();
 	}
 	
 	/**
@@ -96,7 +101,7 @@ public class PhoneBook {
 	 * @return The number of names in this phone book
 	 */
 	public int size() {
-		return 0;
+		return phoneBook.size();
 	}
 
 }
