@@ -6,6 +6,7 @@ import phonebook.PhoneBookGUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  * Created by dat12jsc on 12/12/14.
@@ -23,6 +24,8 @@ public class FindNamesMenu extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-
+        String number = JOptionPane.showInputDialog("Enter number");
+        List<String> names = phoneBook.findNames(number);
+        
     }
 }
