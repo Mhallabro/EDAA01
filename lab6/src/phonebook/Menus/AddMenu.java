@@ -20,6 +20,12 @@ public class AddMenu extends JMenuItem implements ActionListener {
 	}
 	
 	 public void actionPerformed(ActionEvent e) {
-		
+		 String name = JOptionPane.showInputDialog("Enter name");
+		 String number = JOptionPane.showInputDialog("Enter name");
+		 if (name != null && number != null) {
+			 phoneBook.put(name, number);
+		 } else {
+			 JOptionPane.showMessageDialog(gui, "Name or number cannot be null!");
+		 }
 	 }
 }

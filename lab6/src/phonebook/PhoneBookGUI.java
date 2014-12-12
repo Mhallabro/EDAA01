@@ -21,8 +21,10 @@ public class PhoneBookGUI extends JFrame {
 		UIManager.put("OptionPane.cancelButtonText","Cancel");
 		
 		setLayout(new BorderLayout());
+
 		JMenuBar menubar = new JMenuBar();
 		setJMenuBar(menubar);
+
 		JMenu editMenu = new JMenu("Edit");
 		menubar.add(editMenu);
 		editMenu.add(new AddMenu(phoneBook,this));
