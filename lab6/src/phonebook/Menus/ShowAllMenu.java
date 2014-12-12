@@ -6,6 +6,7 @@ import phonebook.PhoneBookGUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 /**
  * Created by dat12jsc on 12/12/14.
@@ -23,6 +24,9 @@ public class ShowAllMenu extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-
+        Set<String> names = phoneBook.names();
+        for (String name : names) {
+            gui.appendPerson(name, phoneBook.findNumber(name));
+        }
     }
 }
