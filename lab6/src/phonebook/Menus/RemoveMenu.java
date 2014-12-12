@@ -1,6 +1,11 @@
-package phonebook;
+package phonebook.Menus;
+
+import phonebook.PhoneBook;
+import phonebook.PhoneBookGUI;
+
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RemoveMenu extends JMenuItem implements ActionListener {
 	private PhoneBook phoneBook;

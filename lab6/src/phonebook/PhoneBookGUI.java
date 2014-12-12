@@ -1,7 +1,10 @@
 package phonebook;
+
+import phonebook.Menus.*;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.Locale;
 
 public class PhoneBookGUI extends JFrame {
 	private PhoneBook phoneBook;
@@ -24,7 +27,16 @@ public class PhoneBookGUI extends JFrame {
 		menubar.add(editMenu);
 		editMenu.add(new AddMenu(phoneBook,this));
 		editMenu.add(new RemoveMenu(phoneBook,this));
-			
+
+		JMenu findMenu = new JMenu("Find");
+		menubar.add(findMenu);
+		findMenu.add(new FindNumbersMenu(phoneBook, this));
+		findMenu.add(new FindNamesMenu(phoneBook, this));
+
+		JMenu viewMenu = new JMenu("View");
+		menubar.add(viewMenu);
+		viewMenu.add(new ShowAllMenu(phoneBook, this));
+
 		
 		JPanel southPanel = new JPanel();
 		messageArea = new JTextArea(4,25);
