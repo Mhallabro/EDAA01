@@ -25,6 +25,7 @@ public class ShowAllMenu extends JMenuItem implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Set<String> names = phoneBook.names();
+        gui.clearMessages();
         for (String name : names) {
             gui.appendPerson(name, phoneBook.findNumber(name));
         }
