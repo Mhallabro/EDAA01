@@ -65,10 +65,7 @@ public class PhoneBookGUI extends JFrame {
 	}
 
 	public void appendPerson(String name, List<String> numbers) {
-		for (String num : numbers) {
-			appendMessage(name + ":\t" + numbers + "\n");
-		}
-
+		appendMessage(name + ":\t" + numbers + "\n");
 	}
 
 }
