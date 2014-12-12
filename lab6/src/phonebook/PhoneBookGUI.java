@@ -4,7 +4,7 @@ import phonebook.Menus.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 
 public class PhoneBookGUI extends JFrame {
@@ -64,7 +64,7 @@ public class PhoneBookGUI extends JFrame {
 		messageArea.setText("");
 	}
 
-	public void appendPerson(String name, LinkedList<String> numbers) {
+	public void appendPerson(String name, List<String> numbers) {
 		for (String num : numbers) {
 			appendMessage(name + ":\t" + numbers + "\n");
 		}
