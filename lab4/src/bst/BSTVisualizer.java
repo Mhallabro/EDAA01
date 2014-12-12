@@ -33,6 +33,8 @@ public class BSTVisualizer {
 		tree.add(3);
 		tree.add(2);
 		tree.add(1);
+        tree.add(5);
+        tree.add(9);
 		tree.rebuild();
         bst.drawTree(tree);
     }
