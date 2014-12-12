@@ -27,6 +27,8 @@ public class PhoneBookTest {
         phoneBook.put("Aaron", "002");
         assertEquals(2, phoneBook.size());
         assertEquals(1, phoneBook.findNumber("Aaron").size());
+        phoneBook.put("Peter", "001");
+        assertEquals(3, phoneBook.size());
     }
 
 
